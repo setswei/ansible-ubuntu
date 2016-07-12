@@ -7,7 +7,7 @@ MAINTAINER setswei <kyle.hartigan@cybercrysis.net.au>
 # Update APT and install Dependencies
 RUN apt-get update -qq
 RUN apt-get install -y software-properties-common
-RUN apt-add-repository -y ppa:ansible/ansible
+RUN add-apt-repository -y ppa:ansible/ansible
 RUN apt-get update
 RUN apt-get install -y ansible
 
