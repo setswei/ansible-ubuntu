@@ -1,5 +1,5 @@
 # Select Source OS
-FROM ubuntu
+FROM ubuntu:12.04.5
 
 # Author
 MAINTAINER setswei <kyle.hartigan@cybercrysis.net.au>
