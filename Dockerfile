@@ -5,12 +5,18 @@ FROM ubuntu:12.04.5
 MAINTAINER setswei <kyle.hartigan@cybercrysis.net.au>
 
 # Update APT and install Dependencies
-RUN apt-get update -qq
-RUN apt-get install -y software-properties-common python-software-properties
-RUN apt-add-repository -y ppa:ansible/ansible
-RUN apt-get update
-RUN apt-get install -y ansible
+RUN apt-get update -qq && \
+    apt-get install -y software-properties-common python-software-properties && \
 
-# Create Ansible Inventory File
-RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
+    # Add Apt Repository and install Ansible
+    apt-add-repository -y ppa:ansible/ansible && \
+    apt-get update && \
+    apt-get install -y ansible && \
+
+    # Apt Cleanup
+    apt-get clean all && \
+    rm -rf /var/lib/apt/lists/* && \
+
+    # Create Ansible Inventory File
+    echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
