@@ -1,5 +1,5 @@
 # Select Source OS
-FROM ubuntu:14.04.4
+FROM ubuntu:16.04
 
 # Author
 MAINTAINER setswei <kyle.hartigan@cybercrysis.net.au>
