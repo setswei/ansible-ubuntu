@@ -5,9 +5,9 @@ FROM ubuntu:12.04.5
 MAINTAINER setswei <kyle.hartigan@cybercrysis.net.au>
 
 # Update APT and install Dependencies
-RUN add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu precise multiverse" && \
-    apt-get update -qq && \
+RUN apt-get update -qq && \
     apt-get install -y software-properties-common python-software-properties && \
+    add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu precise multiverse" && \
 
     # Add Apt Repository and install Ansible
     apt-add-repository -y ppa:ansible/ansible && \
