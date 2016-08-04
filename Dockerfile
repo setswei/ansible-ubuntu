@@ -5,9 +5,9 @@ FROM ubuntu:14.04.4
 MAINTAINER setswei <kyle.hartigan@cybercrysis.net.au>
 
 # Update APT and install Dependencies
-RUN add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu trusty multiverse" && \
-    apt-get update -qq && \
+RUN apt-get update -qq && \
     apt-get install -y software-properties-common && \
+    add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu trusty multiverse" && \
 
     # Add Apt Repository and Install Ansible
     apt-add-repository -y ppa:ansible/ansible && \
